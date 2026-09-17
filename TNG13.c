@@ -1,9 +1,6 @@
-/* Program (13) -> Write a program using the switch-case statement
-   to create a menu-driven calculator that repeatedly performs
-   arithmetic operations until the user exits the program. */
+/* Program (13) -> Write a program using the switch-case statement to create a menu-driven calculator that repeatedly performs arithmetic operations until the user exits the program. */
 
 #include <stdio.h>
-
 int main()
 {
     int choice;
@@ -17,7 +14,6 @@ int main()
         printf("3. Multiplication\n");
         printf("4. Division\n");
         printf("5. Exit\n");
-
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
@@ -48,15 +44,10 @@ int main()
                 printf("Enter two numbers: ");
                 scanf("%f %f", &num1, &num2);
 
-                if (num2 == 0)
-                {
-                    printf("Error! Division by zero is not allowed.\n");
-                }
+                if (num2 != 0)
+                    printf("Result = %.2f\n", num1 / num2);
                 else
-                {
-                    result = num1 / num2;
-                    printf("Result = %.2f\n", result);
-                }
+                    printf("Error! Division by zero is not allowed.\n");
                 break;
 
             case 5:
@@ -66,7 +57,6 @@ int main()
             default:
                 printf("Invalid choice! Please try again.\n");
         }
-
     } while (choice != 5);
 
     return 0;
